@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OH0-kr-3Gb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_logo_.jpg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fZ4-Km-F1i">
+                                        <rect key="frame" x="85" y="129" width="150" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="8hf-uU-6g8"/>
+                                            <constraint firstAttribute="height" constant="120" id="cIQ-rW-Xj8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W3Shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFf-5s-898">
+                                        <rect key="frame" x="0.0" y="249" width="320" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="Ifd-Co-wcp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                        <color key="textColor" red="0.28487202525138855" green="0.65895885229110718" blue="0.27676096558570862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kFf-5s-898" firstAttribute="leading" secondItem="OH0-kr-3Gb" secondAttribute="leading" id="LdV-nD-xdw"/>
+                                    <constraint firstItem="kFf-5s-898" firstAttribute="top" secondItem="fZ4-Km-F1i" secondAttribute="bottom" id="Q7z-GO-cKw"/>
+                                    <constraint firstItem="fZ4-Km-F1i" firstAttribute="leading" secondItem="OH0-kr-3Gb" secondAttribute="leading" constant="85" id="QJQ-xs-IHP"/>
+                                    <constraint firstItem="fZ4-Km-F1i" firstAttribute="centerX" secondItem="OH0-kr-3Gb" secondAttribute="centerX" id="Qo5-rI-vy1"/>
+                                    <constraint firstItem="fZ4-Km-F1i" firstAttribute="top" secondItem="OH0-kr-3Gb" secondAttribute="top" constant="129" id="lK2-Io-gaS"/>
+                                    <constraint firstAttribute="trailing" secondItem="kFf-5s-898" secondAttribute="trailing" id="ug8-X2-lg1"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZ4-Km-F1i" secondAttribute="trailing" constant="85" id="wgB-iJ-dbU"/>
+                                    <constraint firstAttribute="bottom" secondItem="kFf-5s-898" secondAttribute="bottom" constant="293" id="wtd-FO-p8R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OH0-kr-3Gb" firstAttribute="leading" secondItem="GPO-LQ-tAD" secondAttribute="leading" id="D0t-ic-5jN"/>
+                            <constraint firstItem="OH0-kr-3Gb" firstAttribute="trailing" secondItem="GPO-LQ-tAD" secondAttribute="trailing" id="IR3-73-apq"/>
+                            <constraint firstItem="OH0-kr-3Gb" firstAttribute="bottom" secondItem="GPO-LQ-tAD" secondAttribute="bottom" id="wBG-XE-HPZ"/>
+                            <constraint firstItem="OH0-kr-3Gb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="xUe-nt-DAr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GPO-LQ-tAD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199" y="217"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile_logo_.jpg" width="280" height="280"/>
+    </resources>
+</document>

@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.5.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - Stripe (11.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SDWebImage
+  - Stripe
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  Stripe: 3c86dc18af21e59dd559aa15e83cb501248f9903
+
+PODFILE CHECKSUM: d4e7df83c9a07f9d1e93d80bf1b30b7cda9f3243
+
+COCOAPODS: 1.4.0.beta.1
