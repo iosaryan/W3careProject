@@ -23,14 +23,23 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     
     var localTotal:Float = 0.0
     fileprivate var rightCount = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Cart"
+
+        
         self.getTranscriptions()
+        
         Table.delegate = self
         Table.dataSource = self
         Table.separatorStyle = UITableViewCellSeparatorStyle.none
         self.Table.rowHeight = 77.0
+        
+        //Detault Background clear
+        self.Table.backgroundColor = UIColor.clear
         self.Table.tableFooterView = UIView()
     }
     
@@ -42,34 +51,34 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
         Table.reloadData()
     }
     
-   
+  
     
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+
         return 1
     }
-    
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return(NameData.count)
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CartCell
-        
+
         cell.productName?.text = NameData[indexPath.item]
-        
+
         let myStringToTwoDecimals = String(format:"%.2f", PriceData[indexPath.item])
-        
+
         cell.Price?.text = myStringToTwoDecimals
-        
+
         let dataDecoded : Data = Data(base64Encoded: ImageData[indexPath.item], options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)
         cell.IMG.image = decodedimage
-       
-        
-        
-        
+
+
+
+
         return(cell)
     }
     
@@ -117,7 +126,6 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
         // vc.productName = NameData[(sender as AnyObject).tag]
         vc.productPrice = String(format:"%.2f", localTotal)
         self.show(vc, sender: self)
-        
         
     }
     

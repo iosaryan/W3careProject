@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVC" customModule="W3Shop" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="lea-lr-Raq" id="Tmt-h8-PKA"/>
+                <outlet property="search_CollectionView" destination="baG-80-odK" id="Fl8-wW-lnu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="baG-80-odK">
+                    <rect key="frame" x="0.0" y="57" width="320" height="511"/>
+                    <color key="backgroundColor" red="0.92124956846237183" green="0.92194885015487671" blue="0.92135781049728394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eYe-8D-5cf">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="7" minY="7" maxX="7" maxY="7"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="93D-hf-b8F"/>
+                        <outlet property="delegate" destination="-1" id="kcP-az-SbA"/>
+                    </connections>
+                </collectionView>
+                <searchBar contentMode="redraw" placeholder="Search for Product, Brands and More" translatesAutoresizingMaskIntoConstraints="NO" id="lea-lr-Raq">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="BRq-7T-ksu"/>
+                    </constraints>
+                    <color key="tintColor" red="0.92156862750000001" green="0.26274509800000001" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="barTintColor" red="0.92124956849999995" green="0.92194885019999995" blue="0.92135781049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="e8u-xa-HR6"/>
+                    </connections>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lea-lr-Raq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="LEN-lV-cL5"/>
+                <constraint firstItem="baG-80-odK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="N6f-UB-pAI"/>
+                <constraint firstItem="baG-80-odK" firstAttribute="top" secondItem="lea-lr-Raq" secondAttribute="bottom" constant="1" id="XzY-jb-5mX"/>
+                <constraint firstItem="baG-80-odK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZGC-YN-4ZQ"/>
+                <constraint firstAttribute="bottom" secondItem="baG-80-odK" secondAttribute="bottom" id="lVd-c3-XaO"/>
+                <constraint firstItem="lea-lr-Raq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oea-gl-RDC"/>
+                <constraint firstItem="baG-80-odK" firstAttribute="top" secondItem="lea-lr-Raq" secondAttribute="bottom" constant="1" id="pgK-Ln-7hM"/>
+                <constraint firstItem="lea-lr-Raq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vKT-ZE-Zyc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

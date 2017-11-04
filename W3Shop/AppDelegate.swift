@@ -28,9 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UITabBarDelegate {
         // Override point for customization after application launch.
         
 
+        let newViewController = HomeVC()
+        let navigationController = UINavigationController(rootViewController: newViewController)
+        self.window?.rootViewController = navigationController
+        self.window!.makeKeyAndVisible()
+        navigationController.setNavigationBarHidden(false, animated: true)
         
-        SetTabBarController()
-        SetNavigationBar()
+        
+        
+        //SetTabBarController()
+          SetNavigationBar()
         
         
 //*** Stripe App ID
@@ -48,57 +55,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UITabBarDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
+        
+        // *** hide back bar button title when push
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.clear], for: .normal)
       }
     
    
     
-  func SetTabBarController() -> Void{
-    
-     self.window = UIWindow(frame: UIScreen.main.bounds)
-    
-     let nav1 = UINavigationController()
-     let tabViewController1 = HomeVC(nibName: "HomeVC",bundle: nil)
-     nav1.viewControllers = [tabViewController1]
-    
-     let nav2 = UINavigationController()
-     let tabViewController2 = UserDetails(nibName:"UserDetails",bundle: nil)
-     nav2.viewControllers = [tabViewController2]
-    
-     tabViewController1.tabBarItem = UITabBarItem(
-     title: "Home",
-     image: UIImage(named: "ic_home"),
-     tag: 1)
-     tabViewController2.tabBarItem = UITabBarItem(
-     title: "User",
-     image:UIImage(named: "ic_account") ,
-     tag:2)
-    
-    //*** choose initial state colors here
-    let normalTitleColor = UIColor.gray
-    //*** let selectedTitleColor = UIColor.black
-    
-//*** choose initial state fonts and weights here
-    let normalTitleFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.regular)
-    let selectedTitleFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
- 
-//*** normal state
-    tabViewController1.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: normalTitleFont, NSAttributedStringKey.foregroundColor: normalTitleColor], for: UIControlState.normal)
-    
-    tabViewController2.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: selectedTitleFont, NSAttributedStringKey.foregroundColor: normalTitleColor], for: UIControlState.normal)
-//*** selected state
-    tabViewController1.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: normalTitleFont, NSAttributedStringKey.foregroundColor: AppColor], for: UIControlState.selected)
-    
-    tabViewController2.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: selectedTitleFont, NSAttributedStringKey.foregroundColor: AppColor], for: UIControlState.selected)
-   
-    let controllers = [nav1,nav2]
-    let tabBarController = UITabBarController()
-     tabBarController.viewControllers = controllers
-    
-     window?.rootViewController = tabBarController
-     self.window!.makeKeyAndVisible()
-     navigationController.setNavigationBarHidden(false, animated: true)
-   
-    }
+//  func SetTabBarController() -> Void{
+//
+//     self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//     let nav1 = UINavigationController()
+//     let tabViewController1 = HomeVC(nibName: "HomeVC",bundle: nil)
+//     nav1.viewControllers = [tabViewController1]
+//
+//     let nav2 = UINavigationController()
+//     let tabViewController2 = UserDetails(nibName:"UserDetails",bundle: nil)
+//     nav2.viewControllers = [tabViewController2]
+//
+//     tabViewController1.tabBarItem = UITabBarItem(
+//     title: "Home",
+//     image: UIImage(named: "ic_home"),
+//     tag: 1)
+//     tabViewController2.tabBarItem = UITabBarItem(
+//     title: "User",
+//     image:UIImage(named: "ic_account") ,
+//     tag:2)
+//
+//    //*** choose initial state colors here
+//    let normalTitleColor = UIColor.gray
+//    //*** let selectedTitleColor = UIColor.black
+//
+////*** choose initial state fonts and weights here
+//    let normalTitleFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.regular)
+//    let selectedTitleFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
+//
+////*** normal state
+//    tabViewController1.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: normalTitleFont, NSAttributedStringKey.foregroundColor: normalTitleColor], for: UIControlState.normal)
+//
+//    tabViewController2.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: selectedTitleFont, NSAttributedStringKey.foregroundColor: normalTitleColor], for: UIControlState.normal)
+////*** selected state
+//    tabViewController1.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: normalTitleFont, NSAttributedStringKey.foregroundColor: AppColor], for: UIControlState.selected)
+//
+//    tabViewController2.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: selectedTitleFont, NSAttributedStringKey.foregroundColor: AppColor], for: UIControlState.selected)
+//
+//    let controllers = [nav1,nav2]
+//    let tabBarController = UITabBarController()
+//     tabBarController.viewControllers = controllers
+//
+//     window?.rootViewController = tabBarController
+//     self.window!.makeKeyAndVisible()
+//     navigationController.setNavigationBarHidden(false, animated: true)
+//
+//    }
     
     
     func applicationWillResignActive(_ application: UIApplication) {

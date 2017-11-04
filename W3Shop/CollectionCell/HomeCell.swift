@@ -19,6 +19,7 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var AddtoCartBtn: UIButton!
     @IBOutlet var buynow: UIButton!
     
+    @IBOutlet weak var addtocart_img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
