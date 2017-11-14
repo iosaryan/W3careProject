@@ -42,6 +42,7 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
     var productSalePrice   = String()
     var productColor       = String()
     var productCategory    = String()
+   
     var ProductImage: UIImage!
     
     var imageViewObject = UIImageView()
@@ -53,13 +54,21 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
         // Do any additional setup after loading the view.
         self.title = "Product Detail"
         
-        
-        let ArrCount = 4
-        
+        imageScrollView.delegate = self
+         let ArrCount = 4
+         var xvalue = CGFloat()
         
         for i in 0 ..< ArrCount {
-            print (i)
-            let xvalue = imageScrollView.frame.size.width
+         
+            //let xvalue = imageScrollView.frame.size.width
+            
+            if(Constant.SCREEN_WIDTH == 320){
+                xvalue = 292
+            }else if(Constant.SCREEN_WIDTH == 375) {
+                xvalue = 347
+            }else{
+                xvalue = 386
+            }
             
             //width 288
             imageViewObject = UIImageView(frame:CGRect(x: xvalue * CGFloat(i)  , y: 0, width: imageScrollView.frame.size.width , height: imageScrollView.frame.size.height-15))
@@ -92,6 +101,10 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
         //self.BGscrollView.contentSize = CGSize(width: self.BGView.frame.size.width  , height: self.view.frame.size.height)
         //self.BGscrollView.addSubview(BGView)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         badgeBarButtomItem()
     }
     
     func badgeBarButtomItem()  {
@@ -174,7 +187,7 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Cart", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "buyNowVC") as! buyNowVC
-        vc.productName = productTitle
+        //vc.productName = productTitle
         vc.productPrice = ProductPrice
         self.show(vc, sender: self)
         
@@ -182,6 +195,8 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
     }
     
     @IBAction func addToCartBtn(_ sender: Any) {
+        
+       
         
         //*** check context already exist
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
@@ -200,12 +215,15 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
                 //*** retrieve the entity that we just created
                 let entity =  NSEntityDescription.entity(forEntityName: "Person", in: context)
                 
+              
+              
+                
                 let person = NSManagedObject(entity: entity!, insertInto: context)
                 //*** set the entity values
-                person.setValue(data.productTitle[(sender as AnyObject).tag], forKey: "productname")
-                person.setValue(Float(data.productSalePrice[(sender as AnyObject).tag]), forKey: "price")
+                person.setValue(productTitle, forKey: "productname")
+                person.setValue(Float(productSalePrice), forKey: "price")
                 
-                let UIimage = UIImage(named: data.productImage[(sender as AnyObject).tag]!)
+                let UIimage = ProductImage
                 let imageData: NSData = UIImagePNGRepresentation(UIimage!)! as NSData
                 
                 let ImageStr = imageData.base64EncodedString(options: .lineLength64Characters)
@@ -215,7 +233,7 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
                 do {
                     try context.save()
                     print("saved!")
-                    alert(message: data.productTitle[(sender as AnyObject).tag] as! String, title:"Successfully added to cart" )
+                    alert(message:productTitle , title:"Successfully added to cart" )
                     
                     //**** update cart count
                     rightCount = rightCount + 1
@@ -239,7 +257,7 @@ class ProductDetails: UIViewController , UIScrollViewDelegate{
             else{
                 //*** at least one matching object exists
                 print("one matching item found")
-                alert(message: data.productTitle[(sender as AnyObject).tag] as! String, title:"Already in Cart" )
+                alert(message: productTitle, title:"Already in Cart" )
             }
         }
         catch let error as NSError {

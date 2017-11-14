@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="todays-deal.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nBV-H4-oiU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todays-deal.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nBV-H4-oiU">
                     <rect key="frame" x="10" y="0.0" width="355" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
+            <constraints>
+                <constraint firstItem="nBV-H4-oiU" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="Lkh-8y-d9D"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="nBV-H4-oiU" secondAttribute="trailing" constant="10" id="TLH-9S-xvK"/>
+                <constraint firstItem="nBV-H4-oiU" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="10" id="bn5-Cm-eaC"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="nBV-H4-oiU" secondAttribute="bottom" constant="10" id="nEh-A5-0be"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <point key="canvasLocation" x="-150" y="103"/>
         </collectionReusableView>

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		8F1489AC1F90B3DA00706529 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1489AA1F90B3DA00706529 /* OrderVC.swift */; };
 		8F1489AF1F90BF9B00706529 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1489AE1F90BAD700706529 /* tick.png */; };
+		8F33F7D01FB02701002E92F4 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33F7CE1FB02701002E92F4 /* FilterVC.swift */; };
+		8F33F7D11FB02701002E92F4 /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F33F7CF1FB02701002E92F4 /* FilterVC.xib */; };
+		8F33F7D91FB03AFE002E92F4 /* colorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33F7D71FB03AFE002E92F4 /* colorCell.swift */; };
+		8F33F7DA1FB03AFE002E92F4 /* colorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F33F7D81FB03AFE002E92F4 /* colorCell.xib */; };
+		8F33F7E61FB046B1002E92F4 /* colorPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33F7E41FB046B1002E92F4 /* colorPickerVC.swift */; };
+		8F33F7E71FB046B1002E92F4 /* colorPickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F33F7E51FB046B1002E92F4 /* colorPickerVC.xib */; };
+		8F33F7EB1FB0839F002E92F4 /* filterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33F7E91FB0839E002E92F4 /* filterResult.swift */; };
+		8F33F7EC1FB0839F002E92F4 /* filterResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F33F7EA1FB0839E002E92F4 /* filterResult.xib */; };
 		8F39701F1F8213B2000F2FE1 /* buyNowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F39701E1F8213B2000F2FE1 /* buyNowVC.swift */; };
 		8F3EDFD11F83B5980059FA34 /* SessionManagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3EDFD01F83B5980059FA34 /* SessionManagerAPI.swift */; };
 		8F3F12261FA855CD00918F74 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3F12251FA855CD00918F74 /* AudioToolbox.framework */; };
@@ -112,6 +120,14 @@
 		76E8921D6A7F1E92F1EB20D2 /* Pods_W3ShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_W3ShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1489AA1F90B3DA00706529 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
 		8F1489AE1F90BAD700706529 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		8F33F7CE1FB02701002E92F4 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		8F33F7CF1FB02701002E92F4 /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
+		8F33F7D71FB03AFE002E92F4 /* colorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorCell.swift; sourceTree = "<group>"; };
+		8F33F7D81FB03AFE002E92F4 /* colorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = colorCell.xib; sourceTree = "<group>"; };
+		8F33F7E41FB046B1002E92F4 /* colorPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPickerVC.swift; sourceTree = "<group>"; };
+		8F33F7E51FB046B1002E92F4 /* colorPickerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = colorPickerVC.xib; sourceTree = "<group>"; };
+		8F33F7E91FB0839E002E92F4 /* filterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterResult.swift; sourceTree = "<group>"; };
+		8F33F7EA1FB0839E002E92F4 /* filterResult.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = filterResult.xib; sourceTree = "<group>"; };
 		8F3697731F85031F001269E5 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8F3697741F85031F001269E5 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8F39701E1F8213B2000F2FE1 /* buyNowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyNowVC.swift; sourceTree = "<group>"; };
@@ -247,6 +263,44 @@
 			path = OrderHistoryVc;
 			sourceTree = "<group>";
 		};
+		8F33F7CD1FB026E5002E92F4 /* FilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				8F33F7E81FB0837F002E92F4 /* filterResult */,
+				8F33F7DB1FB03BAD002E92F4 /* colorPicker */,
+				8F33F7CE1FB02701002E92F4 /* FilterVC.swift */,
+				8F33F7CF1FB02701002E92F4 /* FilterVC.xib */,
+			);
+			path = FilterVC;
+			sourceTree = "<group>";
+		};
+		8F33F7D21FB02A3B002E92F4 /* ColorCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F33F7D71FB03AFE002E92F4 /* colorCell.swift */,
+				8F33F7D81FB03AFE002E92F4 /* colorCell.xib */,
+			);
+			path = ColorCell;
+			sourceTree = "<group>";
+		};
+		8F33F7DB1FB03BAD002E92F4 /* colorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8F33F7E41FB046B1002E92F4 /* colorPickerVC.swift */,
+				8F33F7E51FB046B1002E92F4 /* colorPickerVC.xib */,
+			);
+			path = colorPicker;
+			sourceTree = "<group>";
+		};
+		8F33F7E81FB0837F002E92F4 /* filterResult */ = {
+			isa = PBXGroup;
+			children = (
+				8F33F7E91FB0839E002E92F4 /* filterResult.swift */,
+				8F33F7EA1FB0839E002E92F4 /* filterResult.xib */,
+			);
+			path = filterResult;
+			sourceTree = "<group>";
+		};
 		8F3697651F84FDFA001269E5 /* utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +314,7 @@
 		8F3697671F84FDFB001269E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8F33F7CD1FB026E5002E92F4 /* FilterVC */,
 				8F4F25D31FAD82590053A217 /* SearchVC */,
 				8F1489A91F90B3BE00706529 /* OrderHistoryVc */,
 				8F39701E1F8213B2000F2FE1 /* buyNowVC.swift */,
@@ -332,6 +387,7 @@
 		8F36976F1F85022A001269E5 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				8F33F7D21FB02A3B002E92F4 /* ColorCell */,
 				8FF0564E1F7BDE5300929DA7 /* CartCell.swift */,
 			);
 			path = TableCell;
@@ -668,12 +724,14 @@
 				8F7402861F850BF400CAE9C8 /* UserDetails.xib in Resources */,
 				8FE11C121FAB4DF700A5F7D0 /* slide_banner5.jpg in Resources */,
 				8FE11C0A1FAB3FED00A5F7D0 /* todays-deal.jpg in Resources */,
+				8F33F7D11FB02701002E92F4 /* FilterVC.xib in Resources */,
 				8FB0C5281F7BA8D6004CE121 /* w2.png in Resources */,
 				8FB0C51D1F7BA8D6004CE121 /* grooming1.jpg in Resources */,
 				8FB0C52B1F7BA8D6004CE121 /* w5.png in Resources */,
 				8FB0C51F1F7BA8D6004CE121 /* jay.jpg in Resources */,
 				8FB0C49E1F7B7177004CE121 /* Assets.xcassets in Resources */,
 				8FB0C51C1F7BA8D6004CE121 /* bg2.jpg in Resources */,
+				8F33F7DA1FB03AFE002E92F4 /* colorCell.xib in Resources */,
 				8FB0C5251F7BA8D6004CE121 /* rain5.jpg in Resources */,
 				8FB0C5261F7BA8D6004CE121 /* rain6.jpg in Resources */,
 				8FE11C111FAB4DF700A5F7D0 /* slide_banner4.jpg in Resources */,
@@ -682,6 +740,7 @@
 				8FB0C5211F7BA8D6004CE121 /* pik2.jpeg in Resources */,
 				8FE11BFD1FAAE2E000A5F7D0 /* men_1.jpg in Resources */,
 				8FE11BF61FAAE02600A5F7D0 /* discount_image.jpg in Resources */,
+				8F33F7EC1FB0839F002E92F4 /* filterResult.xib in Resources */,
 				8FE11C081FAB3F2A00A5F7D0 /* Header2_ReusableView.xib in Resources */,
 				8FB0C51E1F7BA8D6004CE121 /* iohone1.jpg in Resources */,
 				8FB0C5221F7BA8D6004CE121 /* pik3.jpeg in Resources */,
@@ -700,6 +759,7 @@
 				8F8D885E1F7D2550002D44E4 /* Menu.storyboard in Resources */,
 				8FB0C5291F7BA8D6004CE121 /* w3.png in Resources */,
 				8FE11BF51FAAE02600A5F7D0 /* Banner_girl2.jpeg in Resources */,
+				8F33F7E71FB046B1002E92F4 /* colorPickerVC.xib in Resources */,
 				8FE11BF41FAAE02600A5F7D0 /* banner_girl1.jpg in Resources */,
 				8FB0C4DD1F7B7B9D004CE121 /* HomeCell.xib in Resources */,
 				8FF056491F7BDA8900929DA7 /* darkCart.png in Resources */,
@@ -733,12 +793,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/ZMSwiftRangeSlider/ZMSwiftRangeSlider.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZMSwiftRangeSlider.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -785,6 +847,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F33F7EB1FB0839F002E92F4 /* filterResult.swift in Sources */,
+				8F33F7D01FB02701002E92F4 /* FilterVC.swift in Sources */,
 				8FB0C4C61F7B71AA004CE121 /* HomeVC.swift in Sources */,
 				8FEDE9C71FA992520086E9F4 /* CollectionHeaderView.swift in Sources */,
 				8FB0C4DC1F7B7B9D004CE121 /* HomeCell.swift in Sources */,
@@ -802,9 +866,11 @@
 				8FB0C4CB1F7B7204004CE121 /* dataModel.swift in Sources */,
 				8F4F25D61FAD82750053A217 /* SearchVC.swift in Sources */,
 				8F1489AC1F90B3DA00706529 /* OrderVC.swift in Sources */,
+				8F33F7E61FB046B1002E92F4 /* colorPickerVC.swift in Sources */,
 				8FB0C4C91F7B71F8004CE121 /* Constant.swift in Sources */,
 				8F8D885C1F7D1B9B002D44E4 /* BaseViewController.swift in Sources */,
 				8FF056471F7BC93600929DA7 /* ObjC-Header.m in Sources */,
+				8F33F7D91FB03AFE002E92F4 /* colorCell.swift in Sources */,
 				8FE11C031FAB23A300A5F7D0 /* bannerCell.swift in Sources */,
 				8F8D885B1F7D1B9B002D44E4 /* MenuViewController.swift in Sources */,
 				8F3EDFD11F83B5980059FA34 /* SessionManagerAPI.swift in Sources */,

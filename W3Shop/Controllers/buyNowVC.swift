@@ -11,14 +11,21 @@ import Stripe
 
 class buyNowVC: UIViewController , STPPaymentCardTextFieldDelegate  {
 
-    @IBOutlet weak var Name: UILabel!
+    
     @IBOutlet weak var price: UILabel!
+    
+    @IBOutlet weak var cardNameView: UIView!
+    @IBOutlet weak var expiryDateView: UIView!
+    @IBOutlet weak var cvvView: UIView!
+    
+    
+    
     @IBOutlet weak var submitButton: UIButton!
     
     
     var paymentTextField: STPPaymentCardTextField! = nil
     
-    var productName  = String()
+   // var productName  = String()
     var productPrice = String()
     
     
@@ -29,18 +36,40 @@ class buyNowVC: UIViewController , STPPaymentCardTextFieldDelegate  {
         self.title = "Checkout"
     
         
-        self.Name.text =  String(format: "Product Name: %@", productName );
-        self.price.text = String(format: "Product Price: %@", productPrice );
+        self.cardNameView.layer.borderWidth = 1
+        self.cardNameView.layer.cornerRadius = 5
+        self.cardNameView.layer.borderColor = UIColor.lightGray.cgColor //.cgColor
+        self.cardNameView.clipsToBounds = true
+        
+        self.expiryDateView.layer.borderWidth = 1
+        self.expiryDateView.layer.cornerRadius = 5
+        self.expiryDateView.layer.borderColor = UIColor.lightGray.cgColor
+        self.expiryDateView.clipsToBounds = true
+        
+        self.cvvView.layer.borderWidth = 1
+        self.cvvView.layer.cornerRadius = 5
+        self.cvvView.layer.borderColor = UIColor.lightGray.cgColor
+        self.cvvView.clipsToBounds = true
+        
+        
+        self.submitButton.layer.cornerRadius = 15
+        self.submitButton.clipsToBounds = true
+        
+        self.price.text = String(format: "%@", productPrice );
+        
+       self.submitButton.setTitle(String(format: "PAY %@", productPrice ), for: .normal)
         
         //print("Username" , UserDefaults.standard.string(forKey: "name")!)
         //print("PhoneNumber" , UserDefaults.standard.string(forKey: "phone")!)
         //print("Shipping Address", UserDefaults.standard.string(forKey: "address")!)
         
-        paymentTextField = STPPaymentCardTextField(frame: CGRect(x: 15, y: view.frame.height/2-185, width: view.frame.width - 30, height: 44))
+        paymentTextField = STPPaymentCardTextField(frame: CGRect(x: 22, y: 318, width: 332, height: 50))
         paymentTextField.delegate = self
         view.addSubview(paymentTextField)
         
          self.hideKeyboard()
+        
+        
     }
     
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {

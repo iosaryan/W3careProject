@@ -25,8 +25,8 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     
     fileprivate var rightCount = 0
    
-    var searchActive : Bool = false
-    var filtered:[String] = []
+   // var searchActive : Bool = false
+    //var filtered:[String] = []
     var timer = Timer()
     
     var headerView =   CollectionHeaderView()
@@ -81,7 +81,7 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        // Scheduling timer to Call the function "updateCounting" with the interval of 2 seconds
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.moveToNextSlider(sender:)), userInfo: nil, repeats: true)
     }
     
@@ -179,15 +179,21 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
                 
                 let ArrCount = 4
                 var imageViewObject = UIImageView()
+                var xvalue = Int()
                 
                 for i in 0 ..< ArrCount {
-                    print (i)
-                    let xvalue = headerView.ScrollView.frame.size.width
                     
-                    imageViewObject = UIImageView(frame:CGRect(x: xvalue * CGFloat(i), y: 0, width: headerView.ScrollView.frame.size.width, height: 160))
+                    if(Constant.SCREEN_WIDTH == 320){
+                         xvalue = 292
+                    }else if(Constant.SCREEN_WIDTH == 375) {
+                         xvalue = 347
+                    }else{
+                         xvalue = 386
+                    }
                     
-                    imageViewObject.contentMode = UIViewContentMode.scaleToFill
+                    imageViewObject = UIImageView(frame:CGRect(x: xvalue * i, y: 0, width: Int(headerView.ScrollView.frame.size.width), height: 160))
                     imageViewObject.clipsToBounds = true
+                     imageViewObject.contentMode = UIViewContentMode.scaleToFill
                     imageViewObject.image = UIImage(named: data.sliderImage[i])
                     headerView.ScrollView.addSubview(imageViewObject)
                     
@@ -205,6 +211,12 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
                 //scrollViewDidEndDecelerating( headerView.ScrollView)
                 headerView.slideControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControlEvents.valueChanged)
                 
+                // *** define actions
+                 headerView.mens_btn.addTarget(self, action: #selector(MensClick), for: UIControlEvents.touchUpInside)
+                 headerView.women_Btn.addTarget(self, action: #selector(WomenClick), for: UIControlEvents.touchUpInside)
+                 headerView.kid_btn.addTarget(self, action: #selector(KidsClick), for: UIControlEvents.touchUpInside)
+                 headerView.offier_btn.addTarget(self, action: #selector(OthersClick), for: UIControlEvents.touchUpInside)
+               
                 
                 
                 return headerView
@@ -229,22 +241,23 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     
-     // *** Slider Method
+     // *** Slider Method with Timer
     @objc func moveToNextSlider(sender: AnyObject) -> () {
         
-        let pageWidth:CGFloat = headerView.ScrollView.frame.size.width
-        let maxWidth:CGFloat = pageWidth * 4
-        let contentOffset:CGFloat = headerView.ScrollView.contentOffset.x
+            let pageWidth:CGFloat = self.headerView.ScrollView.frame.size.width
+            let maxWidth:CGFloat = pageWidth * 4
+            let contentOffset:CGFloat = self.headerView.ScrollView.contentOffset.x
+
+            var slideToX = contentOffset + pageWidth
+
+            if  contentOffset + pageWidth == maxWidth{
+                slideToX = 0
+            }
+            let page = Int(floor(( self.headerView.ScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
+            //print("page = \(page)")
+            self.headerView.slideControl.currentPage = page
+            self.headerView.ScrollView!.scrollRectToVisible(CGRect(x:slideToX , y: 0, width:pageWidth, height:self.headerView.ScrollView.frame.size.height), animated: true)
         
-        var slideToX = contentOffset + pageWidth
-        
-        if  contentOffset + pageWidth == maxWidth{
-            slideToX = 0
-        }
-        let page = Int(floor(( headerView.ScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
-        print("page = \(page)")
-        headerView.slideControl.currentPage = page
-        headerView.ScrollView!.scrollRectToVisible(CGRect(x:slideToX , y: 0, width:pageWidth, height:headerView.ScrollView.frame.size.height), animated: true)
     }
     
     
@@ -252,7 +265,7 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
         
         let pageWidth =  headerView.ScrollView.frame.size.width
         let page = Int(floor(( headerView.ScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
-        print("page = \(page)")
+        //print("page = \(page)")
         headerView.slideControl.currentPage = page
     }
     
@@ -260,9 +273,68 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     {
         let pageWidth =  headerView.ScrollView.frame.size.width
         let page = Int(floor(( headerView.ScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
-        print("page = \(page)")
+        //print("page = \(page)")
         headerView.slideControl.currentPage = page
     }
+    
+    // *** Action of MENS , WOMEN , KIDS , OTHERS
+    @objc func MensClick(sender: AnyObject) -> () {
+        
+        let ViewController = ProductDetails()
+        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
+        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
+        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
+        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
+        ViewController.productDescription = data.productDescription[sender.tag]
+        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
+        ViewController.productCategory =  data.productCategory[sender.tag]
+        
+        
+        self.navigationController?.pushViewController(ViewController, animated: true)
+    }
+    
+    @objc func WomenClick(sender: AnyObject) -> () {
+        let ViewController = ProductDetails()
+        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
+        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
+        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
+        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
+        ViewController.productDescription = data.productDescription[sender.tag]
+        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
+        ViewController.productCategory =  data.productCategory[sender.tag]
+        
+        
+        self.navigationController?.pushViewController(ViewController, animated: true)
+    }
+    
+    @objc func KidsClick(sender: AnyObject) -> () {
+        let ViewController = ProductDetails()
+        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
+        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
+        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
+        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
+        ViewController.productDescription = data.productDescription[sender.tag]
+        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
+        ViewController.productCategory =  data.productCategory[sender.tag]
+        
+        
+        self.navigationController?.pushViewController(ViewController, animated: true)
+    }
+    
+    @objc func OthersClick(sender: AnyObject) -> () {
+        let ViewController = ProductDetails()
+        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
+        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
+        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
+        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
+        ViewController.productDescription = data.productDescription[sender.tag]
+        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
+        ViewController.productCategory =  data.productCategory[sender.tag]
+        
+        
+        self.navigationController?.pushViewController(ViewController, animated: true)
+    }
+    
     
     // MARK: - CollectionView Header Height
     func collectionView(_ collectionView: UICollectionView,
@@ -290,9 +362,7 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
         if section == 0 {
             return data.bannerImage.count
         }else{
-            if(searchActive) {
-                return filtered.count
-            }
+            
             return data.productTitle.count
         }
     }
@@ -330,23 +400,16 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeCell
             
-            if(searchActive){
-                
-                //  cell.Productname.text = filtered[indexPath.item]
-            } else {
-                cell.Productname.text = data.productTitle[indexPath.item] as? String
-                cell.IMG.image        = UIImage(named: data.productImage[indexPath.row]!)
-                //cell.addtocart_img.image = UIImage(named: "addtoCart")
-                cell.colorText.text   = data.productDescription[indexPath.row]
-                cell.priceText.text   = "Rs" + data.productSalePrice[indexPath.row]
-                
-            }
+            
+            cell.Productname.text = data.productTitle[indexPath.item] as? String
+            cell.IMG.image        = UIImage(named: data.productImage[indexPath.row]!)
+            cell.colorText.text   = data.productDescription[indexPath.row]
+            cell.priceText.text   = "Rs" + data.productSalePrice[indexPath.row]
             
             cell.AddtoCartBtn.tag = indexPath.row
-            //cell.buynow.tag = indexPath.row
+            
             cell.screenBtn.tag = indexPath.row
             cell.AddtoCartBtn.addTarget(self, action: #selector(AddtoCartBtn), for: UIControlEvents.touchUpInside)
-            // cell.buynow.addTarget(self, action: #selector(BuynowBtn), for: UIControlEvents.touchUpInside)
             cell.screenBtn.addTarget(self , action: #selector (screenBtnPress) , for: UIControlEvents.touchUpInside)
             
             return cell
@@ -377,11 +440,11 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
 /*******************************************************************************/
     
     @objc func screenBtnPress(_ sender : UIButton){
-        
+        //*** action- 'click'on today deal
         let ViewController = ProductDetails()
         ViewController.productTitle  =  data.productTitle[sender.tag] as! String
-        ViewController.ProductPrice = "Rs" + data.productSalePrice[sender.tag]
-        ViewController.productSalePrice = "Rs" + data.productSalePrice[sender.tag]
+        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
+        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
         ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
         ViewController.productDescription = data.productDescription[sender.tag]
         ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
@@ -495,13 +558,14 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
      //*** action- 'click'on single Banners
     @objc func bannercell_Taped(sender: UITapGestureRecognizer)
     {
-        if let cell = sender.view as? bannerCell, let indexPath =  self.CollectionView.indexPath(for: cell) {
+        if let cell = sender.view as? bannerCell,
+           let indexPath =  self.CollectionView.indexPath(for: cell) {
             print(indexPath.row)
             //
             let ViewController = ProductDetails()
             ViewController.productTitle  =  data.productTitle[indexPath.row] as! String
             ViewController.ProductPrice = "Rs" + data.productSalePrice[indexPath.row]
-            ViewController.productSalePrice = "Rs" + data.productSalePrice[indexPath.row]
+            ViewController.productSalePrice =  data.productSalePrice[indexPath.row]
             ViewController.ProductImage  = UIImage(named: data.productImage[indexPath.row]!)
             ViewController.productDescription = data.productDescription[indexPath.row]
             ViewController.productDetail_Description = data.productDetail_Description[indexPath.row]

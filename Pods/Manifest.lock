@@ -4,17 +4,20 @@ PODS:
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
   - Stripe (11.3.0)
+  - ZMSwiftRangeSlider (0.1.5)
 
 DEPENDENCIES:
   - Alamofire
   - SDWebImage
   - Stripe
+  - ZMSwiftRangeSlider (~> 0.1.5)
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   Stripe: 3c86dc18af21e59dd559aa15e83cb501248f9903
+  ZMSwiftRangeSlider: eabd6adccdc6a1232115d5aba5635e02b5ba36e9
 
-PODFILE CHECKSUM: d4e7df83c9a07f9d1e93d80bf1b30b7cda9f3243
+PODFILE CHECKSUM: cec5b2c06a63f2b4adcd8e380b2f2e6a41e66408
 
 COCOAPODS: 1.4.0.beta.1

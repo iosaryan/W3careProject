@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+
 class itemList: NSObject {
     
     let productTitle: NSArray = [
@@ -30,8 +33,8 @@ class itemList: NSObject {
         "Blue",
         "Tan",
         "Red",
-        "Blue",
-        "Black",
+        "White",
+        "Purple",
         "Medium Red",
         "Grey",
         "Green",
@@ -62,12 +65,18 @@ class itemList: NSObject {
     let productImage: [String?] = ["pik1.jpeg", "w1.png", "w2.png", "w3.png", "w4.png", "w5.png", "rain4.jpg", "pik2.jpeg", "rain6.jpg", "rain5.jpg", "jay.jpg", "iohone1.jpg", "grooming1.jpg"]
     
     let productPrice: [String?] = ["99.00", "42.00", "34.00", "19.00", "19.00", "167.00", "30.00", "49.99", "49.99", "75.00", "175.50", "270.00", "540.00"]
-    let productSalePrice: [String] = ["99.00", "42.00", "34.00", "19.00", "19.00", "167.00", "30.00", "49.99", "39.99", "75.00", "175.50", "270.00", "540.00"]
-
+    
+    let productSalePrice: [String] = ["99.00", "42.00", "34.00", "19.00", "29.00", "167.00", "30.00", "49.00", "39.00", "75.00", "175.50", "270.00", "540.00"]
+    
+   let productSalePriceInInteger: [Int] = [99, 42, 34, 19, 29, 167, 30, 49, 39, 75, 175, 270, 540]
     // Banner Image
     let sliderImage  :[String] = ["slide_banner4.jpg" , "slidebanner-2.jpg" , "slide_banner3.jpg" , "banner_girl1.jpg" , "slide_banner5.jpg"]
     
     let bannerImage :[String?] = ["Banner_girl2.jpeg" , "banner2.jpg" , "banner1.jpg" , "banner_girl1.jpg" , "discount_image.jpg"]
+    
+   //var commonArray = [String: Any]()
+    
+ 
     
 
 }

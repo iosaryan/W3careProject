@@ -1,8 +1,8 @@
 //
-//  SearchVC.swift
+//  filterResult.swift
 //  W3Shop
 //
-//  Created by ios2 on 11/4/17.
+//  Created by ios2 on 11/6/17.
 //  Copyright © 2017 W3Care. All rights reserved.
 //
 
@@ -10,13 +10,8 @@ import UIKit
 import CoreData
 import AudioToolbox
 
-class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UISearchControllerDelegate , UISearchBarDelegate{
-    
-    
-    
-    @IBOutlet weak var search_CollectionView: UICollectionView!
-    
-    @IBOutlet weak var searchBar: UISearchBar!
+class filterResult: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+
     let data = itemList()
     let reuseIdentifier = "HomeCell"
     
@@ -24,35 +19,76 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
     fileprivate var rightCount = 0
     var label = UILabel()
     
-    var searchActive : Bool = false
-    var filtered:[String] = []
+     var color   = String()
+     var filtered:[String] = []
+     var searchActive : Bool = false
     
+     var priceFilter =  Array<Int>()
+    
+     // *** when Price Filtered apend value
+     var product_name = Array<Any>()
+     var product_color = Array<Any>()
+     var product_image = Array<Any>()
+    
+    @IBOutlet weak var filter_Collection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        self.title = "Search"
-        
         //i am using xibs:
-        self.search_CollectionView!.register(UINib(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.filter_Collection!.register(UINib(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         
         /* Setup delegates */
-        self.search_CollectionView.delegate = self
-        self.search_CollectionView.dataSource = self
-        self.search_CollectionView.allowsSelection = true
-        self.search_CollectionView.isUserInteractionEnabled = true
-        searchBar.delegate = self
-        self.search_CollectionView.reloadData()
+        self.filter_Collection.delegate = self
+        self.filter_Collection.dataSource = self
+        self.filter_Collection.allowsSelection = true
+        self.filter_Collection.isUserInteractionEnabled = true
         
+        print(priceFilter)
+        print(color)
        
-        self.hideKeyboard()
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        badgeBarButtomItem()
+        if (priceFilter.count)>0{
+            searchActive = false
+            
+            /// *** append comman value after filter
+            var INDEX =  IndexPath()
+            for price in priceFilter {
+                
+                let Index = data.productSalePriceInInteger.index(of: price )
+                
+                INDEX = IndexPath(row: Index!, section: 0)
+                print(INDEX)
+                
+                print((data.productTitle[Index!] ))
+                product_name.append((data.productTitle[Index!] ))
+                product_color.append((data.productDescription[Index!] ))
+                product_image.append(data.productImage[Index!] as Any)
+                
+            }
+            
+            self.filter_Collection.reloadData()
+            
+            
+            
+        }else{
+            filter_item()
+            
+           
+            
+            self.filter_Collection.reloadData()
+        }
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        badgeBarButtomItem()
-    }
+    
     
     func badgeBarButtomItem()  {
         
@@ -103,22 +139,15 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
             //*** not exist
         }
         
-        //*** add another button item
-        let image2 = UIImage(imageLiteralResourceName: "filter")
-        let rightButton2 = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        rightButton2.setBackgroundImage(image2, for: .normal)
-        rightButton2.addTarget(self, action: #selector(GotoFilter), for: .touchUpInside)
-        
-        
         
         let rightBarButtomItem  = UIBarButtonItem(customView: rightButton)
-        let rightBarButtomItem2  = UIBarButtonItem(customView: rightButton2)
         
         //*** Bar button item
-        let barButton_array: [UIBarButtonItem] = [rightBarButtomItem , rightBarButtomItem2 ]
+        let barButton_array: [UIBarButtonItem] = [rightBarButtomItem  ]
         navigationItem.setRightBarButtonItems(barButton_array, animated: false)
         
     }
+    
     
     // MARK: - CollectionView Delegate & DataSourse Method
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -129,8 +158,10 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
         
         if(searchActive) {
             return filtered.count
+            
+        }else {
+            return priceFilter.count
         }
-        return data.productTitle.count
         
     }
     
@@ -150,27 +181,37 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
         
         if(searchActive){
             
-              cell.Productname.text = filtered[indexPath.item]
-        } else {
-            cell.Productname.text = data.productTitle[indexPath.item] as? String
-            cell.IMG.image        = UIImage(named: data.productImage[indexPath.row]!)
-            //cell.addtocart_img.image = UIImage(named: "addtoCart")
-            cell.colorText.text   = data.productDescription[indexPath.row]
-            cell.priceText.text   = "Rs" + data.productSalePrice[indexPath.row]
+            for color in filtered {
+                
+                let Index = data.productDescription.index(of: color)
+                
+                cell.Productname.text = (data.productTitle[Index!] as? String)
+                cell.IMG.image        = UIImage(named: data.productImage[Index!]!)
+                cell.priceText.text   = "Rs" + data.productSalePrice[Index!]
+            }
+                cell.colorText.text   = filtered[indexPath.row]
+                cell.AddtoCartBtn.tag = indexPath.row
+                cell.AddtoCartBtn.addTarget(self, action: #selector(AddtoCartBtn), for: UIControlEvents.touchUpInside)
             
+        } else {
+            
+            
+            cell.Productname.text = (product_name[indexPath.row] as! String )
+            cell.IMG.image        = UIImage(named: product_image[indexPath.row] as! String)
+            cell.colorText.text   = product_color[indexPath.row] as? String
+            
+            cell.priceText.text   = "Rs" + String((priceFilter[indexPath.row] ))
+            cell.AddtoCartBtn.tag = indexPath.row
+            cell.AddtoCartBtn.addTarget(self, action: #selector(AddtoCartBtn), for: UIControlEvents.touchUpInside)
         }
         
-        cell.AddtoCartBtn.tag = indexPath.row
-        //cell.buynow.tag = indexPath.row
-        cell.screenBtn.tag = indexPath.row
-        cell.AddtoCartBtn.addTarget(self, action: #selector(AddtoCartBtn), for: UIControlEvents.touchUpInside)
-        // cell.buynow.addTarget(self, action: #selector(BuynowBtn), for: UIControlEvents.touchUpInside)
-        cell.screenBtn.addTarget(self , action: #selector (screenBtnPress) , for: UIControlEvents.touchUpInside)
+      
+        
+        
+       
+       
         
         return cell
-        
-        
-        
         
         
     }
@@ -183,69 +224,39 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
     }
     
     
-    
-    
-    
-    
-    
-    
-    /*********************   Define Searching Method  *******************************/
-    
-    //*** called when search dismiss
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
-        self.hideKeyboard()
-    }
-    
-    //*** called when search button is clicked
-    func searchBarSearchButtonClicked(_searchBar: UISearchBar) {
-        searchActive = false;
-        self.view.endEditing(true)
-        self.search_CollectionView.reloadData()
-    }
-    
-    // *** called when text change
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func filter_item()  {
         
         filtered.removeAll(keepingCapacity: false)
         
-        searchActive = true;
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchBar.text!)
-        let array = (data.productTitle as NSArray).filtered(using: searchPredicate)
+        
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", color)
+        let array = (data.productDescription as NSArray).filtered(using: searchPredicate)
         filtered = array as! [String]
         
-        // ** text Field Emply Check
-        if  searchBar.text! .isEmpty{
-            searchActive = false;
-            self.hideKeyboard()
-        }
-        self.search_CollectionView.reloadData()
+        
+        
+        searchActive = true;
+        
+        self.filter_Collection.reloadData()
+       
     }
     
     
-    /*******************************************************************************/
-    /*********************   Define UIButton Action  *******************************/
-    /*******************************************************************************/
     
-    @objc func screenBtnPress(_ sender : UIButton){
-        
-        let ViewController = ProductDetails()
-        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
-        ViewController.ProductPrice = "Rs" + data.productSalePrice[sender.tag]
-        ViewController.productSalePrice = "Rs" + data.productSalePrice[sender.tag]
-        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
-        ViewController.productDescription = data.productDescription[sender.tag]
-        ViewController.productCategory =  data.productCategory[sender.tag]
-        
-        
-        self.navigationController?.pushViewController(ViewController, animated: true)
-    }
-    
+   
     
     @objc func AddtoCartBtn(_ sender : UIButton){
         //*** check context already exist
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
-        let predicate = NSPredicate(format: "productname == %@", data.productTitle[sender.tag] as!  CVarArg)
+        
+        var predicate = NSPredicate()
+        if (priceFilter.count)>0 {
+         predicate = NSPredicate(format: "productname == %@", product_name[sender.tag] as!  CVarArg)
+        } else {
+          predicate = NSPredicate(format: "productname == %@", data.productTitle[sender.tag] as!  CVarArg)
+        }
+        
+       
         request.predicate = predicate
         request.fetchLimit = 1
         
@@ -262,20 +273,41 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
                 
                 let person = NSManagedObject(entity: entity!, insertInto: context)
                 //*** set the entity values
-                person.setValue(data.productTitle[sender.tag], forKey: "productname")
-                person.setValue(Float(data.productSalePrice[sender.tag]), forKey: "price")
+                if (priceFilter.count)>0 {
+                    
+                    person.setValue(product_name[sender.tag], forKey: "productname")
+                    person.setValue(Float(priceFilter[sender.tag]), forKey: "price")
+                    let UIimage = UIImage(named: product_image[sender.tag] as! String)
+                    let imageData: NSData = UIImagePNGRepresentation(UIimage!)! as NSData
+                    
+                    let ImageStr = imageData.base64EncodedString(options: .lineLength64Characters)
+                    person.setValue(ImageStr, forKey: "image")
+                } else {
+                    
+                    person.setValue(data.productTitle[sender.tag], forKey: "productname")
+                    person.setValue(Float(data.productSalePrice[sender.tag]), forKey: "price")
+                    
+                    let UIimage = UIImage(named: data.productImage[sender.tag]!)
+                    let imageData: NSData = UIImagePNGRepresentation(UIimage!)! as NSData
+                    
+                    let ImageStr = imageData.base64EncodedString(options: .lineLength64Characters)
+                    person.setValue(ImageStr, forKey: "image")
+                }
                 
-                let UIimage = UIImage(named: data.productImage[sender.tag]!)
-                let imageData: NSData = UIImagePNGRepresentation(UIimage!)! as NSData
+               
                 
-                let ImageStr = imageData.base64EncodedString(options: .lineLength64Characters)
-                person.setValue(ImageStr, forKey: "image")
                 
                 //****** save the object
                 do {
                     try context.save()
                     print("saved!")
-                    alert(message: data.productTitle[sender.tag] as! String, title:"Successfully added to cart" )
+                    
+                    if (priceFilter.count)>0 {
+                        alert(message: product_name[sender.tag] as! String, title:"Successfully added to cart" )
+                        }else{
+                            alert(message: data.productTitle[sender.tag] as! String, title:"Successfully added to cart" )
+                        }
+                    
                     
                     //**** update cart count
                     rightCount = rightCount + 1
@@ -308,7 +340,6 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
         
     }
     
-    
     @objc func GotoCart(_ sender: UIButton){
         
         let storyboard = UIStoryboard(name: "Cart", bundle: nil)
@@ -319,27 +350,25 @@ class SearchVC: UIViewController ,UICollectionViewDelegate, UICollectionViewData
     }
     
     
-    @objc func GotoFilter(_ sender : UIButton){
-        
-        let ViewController = FilterVC()
-        self.navigationController?.pushViewController(ViewController, animated: true)
+    deinit {
+        print("Remove NotificationCenter Deinit")
+        NotificationCenter.default.removeObserver(self)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

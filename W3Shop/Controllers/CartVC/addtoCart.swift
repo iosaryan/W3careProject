@@ -36,10 +36,10 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
         Table.delegate = self
         Table.dataSource = self
         Table.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.Table.rowHeight = 77.0
+        self.Table.rowHeight = 104
         
-        //Detault Background clear
-        self.Table.backgroundColor = UIColor.clear
+
+        
         self.Table.tableFooterView = UIView()
     }
     
@@ -124,7 +124,7 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
         let storyboard: UIStoryboard = UIStoryboard(name: "Cart", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "buyNowVC") as! buyNowVC
         // vc.productName = NameData[(sender as AnyObject).tag]
-        vc.productPrice = String(format:"%.2f", localTotal)
+        vc.productPrice = String(format:"Rs %.2f", localTotal)
         self.show(vc, sender: self)
         
     }
@@ -243,7 +243,7 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     func CheckTableRowCount()   {
         if(NameData.count>0){
             
-            Table.separatorStyle = UITableViewCellSeparatorStyle.singleLine;
+            //Table.separatorStyle = UITableViewCellSeparatorStyle.singleLine
             
         }else{
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: Constant.SCREEN_WIDTH , height: 21))

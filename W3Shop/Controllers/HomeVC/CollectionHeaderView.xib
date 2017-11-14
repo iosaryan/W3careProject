@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,15 +20,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mAS-3d-RGY">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAS-3d-RGY">
                     <rect key="frame" x="6" y="6" width="363" height="308"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cL-Ck-l78">
-                            <rect key="frame" x="8" y="10" width="60" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" backgroundImage="men_1.jpg"/>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcn-4F-g6F">
                             <rect key="frame" x="103" y="10" width="60" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,52 +38,76 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="discount_image.jpg"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MENS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79N-Wj-iZ6">
-                            <rect key="frame" x="8" y="71" width="60" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WOMEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLL-8U-N78">
-                            <rect key="frame" x="103" y="71" width="62" height="21"/>
+                            <rect key="frame" x="103" y="75" width="60" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KIDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mF-a4-Ay2">
-                            <rect key="frame" x="199" y="71" width="60" height="21"/>
+                            <rect key="frame" x="199" y="75" width="60" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OFFER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-Pb-SCP">
-                            <rect key="frame" x="295" y="71" width="60" height="21"/>
+                            <rect key="frame" x="295" y="75" width="60" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIa-xZ-ajd">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIa-xZ-ajd">
                             <rect key="frame" x="8" y="110" width="347" height="160"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="Vb3-fU-PzK"/>
+                            </constraints>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="BFC-Xi-SYT"/>
                             </connections>
                         </scrollView>
-                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="fXg-7J-xTG">
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="fXg-7J-xTG">
                             <rect key="frame" x="8" y="270" width="347" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="3kJ-cO-bG1"/>
+                            </constraints>
                             <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="currentPageIndicatorTintColor" red="0.99950927499999997" green="0.1727091372" blue="0.22296947240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </pageControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MENS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79N-Wj-iZ6">
+                            <rect key="frame" x="8" y="75" width="60" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cL-Ck-l78">
+                            <rect key="frame" x="8" y="10" width="60" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="men_1.jpg"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TIa-xZ-ajd" firstAttribute="leading" secondItem="mAS-3d-RGY" secondAttribute="leading" constant="8" id="J2P-xw-zU4"/>
+                        <constraint firstItem="TIa-xZ-ajd" firstAttribute="centerX" secondItem="mAS-3d-RGY" secondAttribute="centerX" id="QT0-QU-reB"/>
+                        <constraint firstAttribute="bottom" secondItem="fXg-7J-xTG" secondAttribute="bottom" constant="1" id="ddy-Tm-RoQ"/>
+                        <constraint firstItem="fXg-7J-xTG" firstAttribute="leading" secondItem="mAS-3d-RGY" secondAttribute="leading" constant="8" id="hxP-lH-8LS"/>
+                        <constraint firstItem="fXg-7J-xTG" firstAttribute="top" secondItem="TIa-xZ-ajd" secondAttribute="bottom" id="omD-JA-qVZ"/>
+                        <constraint firstAttribute="trailing" secondItem="fXg-7J-xTG" secondAttribute="trailing" constant="8" id="uu6-iw-sF0"/>
+                        <constraint firstAttribute="trailing" secondItem="TIa-xZ-ajd" secondAttribute="trailing" constant="8" id="vzg-X2-pGa"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="mAS-3d-RGY" secondAttribute="trailing" constant="6" id="6FT-73-Bvq"/>
+                <constraint firstItem="mAS-3d-RGY" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="6" id="GRA-rD-Qq4"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="mAS-3d-RGY" secondAttribute="bottom" constant="6" id="LH6-OZ-jED"/>
+                <constraint firstItem="mAS-3d-RGY" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" constant="6" id="RSi-4X-ZXG"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
                 <outlet property="ScrollView" destination="TIa-xZ-ajd" id="6pU-vK-HwG"/>
@@ -100,7 +118,7 @@
                 <outlet property="slideControl" destination="fXg-7J-xTG" id="p0L-tQ-idd"/>
                 <outlet property="women_Btn" destination="Hcn-4F-g6F" id="lpY-eN-SoW"/>
             </connections>
-            <point key="canvasLocation" x="-1220.5" y="-77"/>
+            <point key="canvasLocation" x="-1082.5" y="-78"/>
         </collectionReusableView>
     </objects>
     <resources>

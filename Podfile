@@ -10,7 +10,7 @@ target 'W3Shop' do
 pod 'SDWebImage'
 pod 'Stripe'
 pod 'Alamofire'
-
+pod 'ZMSwiftRangeSlider', '~> 0.1.5'
   
 
 end
