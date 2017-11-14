@@ -21,7 +21,7 @@ class FilterVC: UIViewController   {
     @IBOutlet weak var result_count_lbl: UILabel!
     
     var colorStr = String()
- //   var priceResult =  Array<Any>()
+ // var priceResult =  Array<Any>()
   
     var rangePrice = Array<Int> ()
     
@@ -113,7 +113,6 @@ class FilterVC: UIViewController   {
 
     @IBAction func silder_Valuechange(_ sender: Any) {
         
-        
     }
     
     
@@ -121,10 +120,7 @@ class FilterVC: UIViewController   {
     @IBAction func Filter(_ sender: Any) {
         
         if (color_lbl.text?.characters.count)!>6 || (rangePrice.count)>0 {
-            
            
-           
-            
             let VC = filterResult()
             VC.color = colorStr
             VC.priceFilter =  rangePrice

@@ -57,7 +57,7 @@ class buyNowVC: UIViewController , STPPaymentCardTextFieldDelegate  {
         
         self.price.text = String(format: "%@", productPrice );
         
-       self.submitButton.setTitle(String(format: "PAY %@", productPrice ), for: .normal)
+        self.submitButton.setTitle(String(format: "PAY %@", productPrice ), for: .normal)
         
         //print("Username" , UserDefaults.standard.string(forKey: "name")!)
         //print("PhoneNumber" , UserDefaults.standard.string(forKey: "phone")!)

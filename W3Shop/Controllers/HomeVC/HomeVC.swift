@@ -30,9 +30,7 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     var timer = Timer()
     
     var headerView =   CollectionHeaderView()
-    
-    
-    @IBOutlet weak var CollectionView: UICollectionView!
+   @IBOutlet weak var CollectionView: UICollectionView!
     
 
     
@@ -415,8 +413,6 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
             return cell
             
         }
-        
-       
         
     }
 
