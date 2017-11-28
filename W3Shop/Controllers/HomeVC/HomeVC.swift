@@ -25,7 +25,8 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     
     fileprivate var rightCount = 0
    
-   // var searchActive : Bool = false
+    
+    //var searchActive : Bool = false
     //var filtered:[String] = []
     var timer = Timer()
     
@@ -275,61 +276,49 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
         headerView.slideControl.currentPage = page
     }
     
-    // *** Action of MENS , WOMEN , KIDS , OTHERS
+    // MARK: - action- 'click'on MENS , WOMEN , KIDS , OTHERS
+   
     @objc func MensClick(sender: AnyObject) -> () {
         
-        let ViewController = ProductDetails()
-        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
-        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
-        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
-        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
-        ViewController.productDescription = data.productDescription[sender.tag]
-        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
-        ViewController.productCategory =  data.productCategory[sender.tag]
+        
+      let ViewController = categoryVC()
+        
+        
+        ViewController.caregorytitle = "Mens"
+        ViewController.TagValue = 1
+//        let ViewController = ProductDetails()
+//        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
+//        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
+//        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
+//        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
+//        ViewController.productDescription = data.productDescription[sender.tag]
+//        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
+//        ViewController.productCategory =  data.productCategory[sender.tag]
         
         
         self.navigationController?.pushViewController(ViewController, animated: true)
     }
     
     @objc func WomenClick(sender: AnyObject) -> () {
-        let ViewController = ProductDetails()
-        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
-        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
-        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
-        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
-        ViewController.productDescription = data.productDescription[sender.tag]
-        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
-        ViewController.productCategory =  data.productCategory[sender.tag]
         
-        
+        let ViewController = categoryVC()
+         ViewController.caregorytitle = "Womens"
+        ViewController.TagValue = 2
         self.navigationController?.pushViewController(ViewController, animated: true)
     }
     
     @objc func KidsClick(sender: AnyObject) -> () {
-        let ViewController = ProductDetails()
-        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
-        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
-        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
-        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
-        ViewController.productDescription = data.productDescription[sender.tag]
-        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
-        ViewController.productCategory =  data.productCategory[sender.tag]
-        
-        
+        let ViewController = categoryVC()
+        ViewController.caregorytitle = "Kids"
+        ViewController.TagValue = 3
         self.navigationController?.pushViewController(ViewController, animated: true)
     }
     
     @objc func OthersClick(sender: AnyObject) -> () {
-        let ViewController = ProductDetails()
-        ViewController.productTitle  =  data.productTitle[sender.tag] as! String
-        ViewController.ProductPrice =  "Rs" + data.productSalePrice[sender.tag]
-        ViewController.productSalePrice =  data.productSalePrice[sender.tag]
-        ViewController.ProductImage  = UIImage(named: data.productImage[sender.tag]!)
-        ViewController.productDescription = data.productDescription[sender.tag]
-        ViewController.productDetail_Description = data.productDetail_Description[sender.tag]
-        ViewController.productCategory =  data.productCategory[sender.tag]
         
-        
+        let ViewController = categoryVC()
+        ViewController.caregorytitle = "Other"
+        ViewController.TagValue = 4
         self.navigationController?.pushViewController(ViewController, animated: true)
     }
     
@@ -344,8 +333,6 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
         }else{
             return CGSize(width: Constant.SCREEN_WIDTH , height: 70)
         }
-        
-        
     }
     
     
@@ -550,7 +537,7 @@ class HomeVC: BaseViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     
-    
+     // MARK: - action- 'click'on single Banners
      //*** action- 'click'on single Banners
     @objc func bannercell_Taped(sender: UITapGestureRecognizer)
     {

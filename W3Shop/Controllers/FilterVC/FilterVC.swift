@@ -46,8 +46,9 @@ class FilterVC: UIViewController   {
             print(" min value:\(minValue)")
             print(" max value:\(maxValue)")
             
-            let array = [99, 42, 34, 19, 29, 167, 30, 49, 39, 75, 175, 270, 540]
-                //[99.00, 42.00, 34.00, 19.00, 167.00, 30.00, 49.00, 39.00, 75.00, 175.00, 270.00, 540];
+            //let array = [99, 42, 34, 19, 29, 167, 30, 49, 39, 75, 175, 270, 540]
+            let array = [99, 42, 34, 19, 29, 167, 30, 49, 39, 75, 175, 270, 540,
+                         5000,2450, 6000, 1590, 1455, 1799, 1921, 200]
          
             let newArray = array.filter{$0 > minValue && $0 < maxValue}
            

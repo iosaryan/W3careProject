@@ -10,8 +10,11 @@ import UIKit
 
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
+     var customTagValue = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -25,33 +28,58 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         print("View Controller is : \(topViewController) \n", terminator: "")
         switch(index){
         case 0:
-            print("Home\n", terminator: "")
+            print("categoryVC\n", terminator: "")
 
-           // self.openViewControllerBasedOnIdentifier("Home")
+            let ViewController = categoryVC()
+            ViewController.TagValue = 1
+            
+            self.navigationController?.pushViewController(ViewController, animated: true)
+           //self.openViewControllerBasedOnIdentifier("categoryVC")
             
             break
         case 1:
-            print("Play\n", terminator: "")
+            print("categoryVC-2\n", terminator: "")
             
-           // self.openViewControllerBasedOnIdentifier("PlayVC")
-            
+           // self.openViewControllerBasedOnIdentifier("categoryVC")
+            let ViewController = categoryVC()
+            ViewController.TagValue = 2
+            self.navigationController?.pushViewController(ViewController, animated: true)
             break
+         
+        case 3:
+            print("categoryVC-2\n", terminator: "")
+            
+          //  self.openViewControllerBasedOnIdentifier("categoryVC")
+            let ViewController = categoryVC()
+            ViewController.TagValue = 3
+            self.navigationController?.pushViewController(ViewController, animated: true)
+            break
+            
+        case 4:
+            print("categoryVC-2\n", terminator: "")
+            
+           // self.openViewControllerBasedOnIdentifier("categoryVC")
+            let ViewController = categoryVC()
+            ViewController.TagValue = 4
+            self.navigationController?.pushViewController(ViewController, animated: true)
+            break
+            
         default:
             print("default\n", terminator: "")
         }
     }
     
-    func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
-        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-        
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        
-        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-            print("Same VC")
-        } else {
-            self.navigationController!.pushViewController(destViewController, animated: true)
-        }
-    }
+//    func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
+//        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
+//
+//        let topViewController : UIViewController = self.navigationController!.topViewController!
+//
+//        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
+//            print("Same VC")
+//        } else {
+//            self.navigationController!.pushViewController(destViewController, animated: true)
+//        }
+//    }
     
     func addSlideMenuButton(){
         let btnShowMenu = UIButton(type: UIButtonType.system)

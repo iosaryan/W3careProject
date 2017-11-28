@@ -18,7 +18,7 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     @IBOutlet var TotalAmount: UIButton!
     
     var NameData   = [String!]()
-    var PriceData  = [Float]()
+    var PriceData  = [Float!]()
     var ImageData  = [String!]()
     
     var localTotal:Float = 0.0
@@ -75,9 +75,6 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
         let dataDecoded : Data = Data(base64Encoded: ImageData[indexPath.item], options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)
         cell.IMG.image = decodedimage
-
-
-
 
         return(cell)
     }
@@ -218,7 +215,7 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     func GetTotalAmount()  {
         //********** Total amount
         for price in PriceData  {
-            localTotal += Float(price)
+            localTotal += Float(price!)
         }
         TotalAmount.setTitle(String(format: "%@%.2f", " Total Cart Amount Rs: ", localTotal),for: .normal)
         TotalAmount.isHidden = false
@@ -229,7 +226,7 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
         
         localTotal = 0.0
         for price in PriceData  {
-            localTotal += Float(price)
+            localTotal += Float(price!)
         }
         if localTotal < 1 {
             self.CheckTableRowCount()
@@ -267,7 +264,7 @@ class addtoCart: UIViewController , UITableViewDelegate ,UITableViewDataSource {
     // Dispose of any resources that can be recreated.
     //   }
     
-    
+   
     /*
      // MARK: - Navigation
      

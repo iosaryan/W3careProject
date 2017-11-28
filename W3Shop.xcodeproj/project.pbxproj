@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		8F1489AC1F90B3DA00706529 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1489AA1F90B3DA00706529 /* OrderVC.swift */; };
 		8F1489AF1F90BF9B00706529 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1489AE1F90BAD700706529 /* tick.png */; };
+		8F17F8FD1FCBDD9200A976FE /* kids_product1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F8FC1FCBDD9100A976FE /* kids_product1.jpg */; };
+		8F17F8FF1FCBE07400A976FE /* kids_productBoy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F8FE1FCBE07300A976FE /* kids_productBoy.jpeg */; };
+		8F17F9061FCBEB3500A976FE /* mensproduct_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F9001FCBEB3400A976FE /* mensproduct_2.jpg */; };
+		8F17F9071FCBEB3500A976FE /* mens_product1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F9011FCBEB3500A976FE /* mens_product1.jpg */; };
+		8F17F9081FCBEB3500A976FE /* mensProduct_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F9021FCBEB3500A976FE /* mensProduct_3.jpg */; };
+		8F17F9091FCBEB3500A976FE /* otherimage_kalingabrewed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F9031FCBEB3500A976FE /* otherimage_kalingabrewed.jpg */; };
+		8F17F90A1FCBEB3500A976FE /* women_product1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F9041FCBEB3500A976FE /* women_product1.jpg */; };
+		8F17F90B1FCBEB3500A976FE /* womens2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F9051FCBEB3500A976FE /* womens2.jpg */; };
+		8F17F90F1FCBF07D00A976FE /* categoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F17F90D1FCBF07D00A976FE /* categoryVC.swift */; };
+		8F17F9101FCBF07D00A976FE /* categoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F17F90E1FCBF07D00A976FE /* categoryVC.xib */; };
 		8F33F7D01FB02701002E92F4 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33F7CE1FB02701002E92F4 /* FilterVC.swift */; };
 		8F33F7D11FB02701002E92F4 /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F33F7CF1FB02701002E92F4 /* FilterVC.xib */; };
 		8F33F7D91FB03AFE002E92F4 /* colorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33F7D71FB03AFE002E92F4 /* colorCell.swift */; };
@@ -120,6 +130,16 @@
 		76E8921D6A7F1E92F1EB20D2 /* Pods_W3ShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_W3ShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1489AA1F90B3DA00706529 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
 		8F1489AE1F90BAD700706529 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		8F17F8FC1FCBDD9100A976FE /* kids_product1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kids_product1.jpg; sourceTree = "<group>"; };
+		8F17F8FE1FCBE07300A976FE /* kids_productBoy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kids_productBoy.jpeg; sourceTree = "<group>"; };
+		8F17F9001FCBEB3400A976FE /* mensproduct_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mensproduct_2.jpg; sourceTree = "<group>"; };
+		8F17F9011FCBEB3500A976FE /* mens_product1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mens_product1.jpg; sourceTree = "<group>"; };
+		8F17F9021FCBEB3500A976FE /* mensProduct_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mensProduct_3.jpg; sourceTree = "<group>"; };
+		8F17F9031FCBEB3500A976FE /* otherimage_kalingabrewed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = otherimage_kalingabrewed.jpg; sourceTree = "<group>"; };
+		8F17F9041FCBEB3500A976FE /* women_product1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = women_product1.jpg; sourceTree = "<group>"; };
+		8F17F9051FCBEB3500A976FE /* womens2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = womens2.jpg; sourceTree = "<group>"; };
+		8F17F90D1FCBF07D00A976FE /* categoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryVC.swift; sourceTree = "<group>"; };
+		8F17F90E1FCBF07D00A976FE /* categoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = categoryVC.xib; sourceTree = "<group>"; };
 		8F33F7CE1FB02701002E92F4 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		8F33F7CF1FB02701002E92F4 /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
 		8F33F7D71FB03AFE002E92F4 /* colorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorCell.swift; sourceTree = "<group>"; };
@@ -263,6 +283,30 @@
 			path = OrderHistoryVc;
 			sourceTree = "<group>";
 		};
+		8F17F8FB1FCBDD9100A976FE /* categoryProduct */ = {
+			isa = PBXGroup;
+			children = (
+				8F17F9011FCBEB3500A976FE /* mens_product1.jpg */,
+				8F17F9001FCBEB3400A976FE /* mensproduct_2.jpg */,
+				8F17F9021FCBEB3500A976FE /* mensProduct_3.jpg */,
+				8F17F9031FCBEB3500A976FE /* otherimage_kalingabrewed.jpg */,
+				8F17F9041FCBEB3500A976FE /* women_product1.jpg */,
+				8F17F9051FCBEB3500A976FE /* womens2.jpg */,
+				8F17F8FE1FCBE07300A976FE /* kids_productBoy.jpeg */,
+				8F17F8FC1FCBDD9100A976FE /* kids_product1.jpg */,
+			);
+			path = categoryProduct;
+			sourceTree = "<group>";
+		};
+		8F17F90C1FCBF03000A976FE /* categoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				8F17F90D1FCBF07D00A976FE /* categoryVC.swift */,
+				8F17F90E1FCBF07D00A976FE /* categoryVC.xib */,
+			);
+			path = categoryVC;
+			sourceTree = "<group>";
+		};
 		8F33F7CD1FB026E5002E92F4 /* FilterVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +358,7 @@
 		8F3697671F84FDFB001269E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8F17F90C1FCBF03000A976FE /* categoryVC */,
 				8F33F7CD1FB026E5002E92F4 /* FilterVC */,
 				8F4F25D31FAD82590053A217 /* SearchVC */,
 				8F1489A91F90B3BE00706529 /* OrderHistoryVc */,
@@ -538,6 +583,7 @@
 		8FB0C50B1F7BA8D6004CE121 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8F17F8FB1FCBDD9100A976FE /* categoryProduct */,
 				8FE11BEC1FAAE02600A5F7D0 /* banner _image */,
 				8F1489AE1F90BAD700706529 /* tick.png */,
 				8FB0C4E01F7B986E004CE121 /* profile_logo_.jpg */,
@@ -726,12 +772,16 @@
 				8FE11C0A1FAB3FED00A5F7D0 /* todays-deal.jpg in Resources */,
 				8F33F7D11FB02701002E92F4 /* FilterVC.xib in Resources */,
 				8FB0C5281F7BA8D6004CE121 /* w2.png in Resources */,
+				8F17F8FF1FCBE07400A976FE /* kids_productBoy.jpeg in Resources */,
 				8FB0C51D1F7BA8D6004CE121 /* grooming1.jpg in Resources */,
 				8FB0C52B1F7BA8D6004CE121 /* w5.png in Resources */,
+				8F17F8FD1FCBDD9200A976FE /* kids_product1.jpg in Resources */,
 				8FB0C51F1F7BA8D6004CE121 /* jay.jpg in Resources */,
 				8FB0C49E1F7B7177004CE121 /* Assets.xcassets in Resources */,
+				8F17F9091FCBEB3500A976FE /* otherimage_kalingabrewed.jpg in Resources */,
 				8FB0C51C1F7BA8D6004CE121 /* bg2.jpg in Resources */,
 				8F33F7DA1FB03AFE002E92F4 /* colorCell.xib in Resources */,
+				8F17F9081FCBEB3500A976FE /* mensProduct_3.jpg in Resources */,
 				8FB0C5251F7BA8D6004CE121 /* rain5.jpg in Resources */,
 				8FB0C5261F7BA8D6004CE121 /* rain6.jpg in Resources */,
 				8FE11C111FAB4DF700A5F7D0 /* slide_banner4.jpg in Resources */,
@@ -749,10 +799,13 @@
 				8FB0C4991F7B7177004CE121 /* Main.storyboard in Resources */,
 				8FE11BF21FAAE02600A5F7D0 /* banner1.jpg in Resources */,
 				8FE11C131FAB4DF700A5F7D0 /* slidebanner-2.jpg in Resources */,
+				8F17F9061FCBEB3500A976FE /* mensproduct_2.jpg in Resources */,
 				8FE11C101FAB4DF700A5F7D0 /* slide_banner3.jpg in Resources */,
 				8FEDE9C81FA992520086E9F4 /* CollectionHeaderView.xib in Resources */,
 				8FE11C041FAB23A300A5F7D0 /* bannerCell.xib in Resources */,
 				8FE11BFE1FAAE2E000A5F7D0 /* women_1.jpg in Resources */,
+				8F17F9101FCBF07D00A976FE /* categoryVC.xib in Resources */,
+				8F17F9071FCBEB3500A976FE /* mens_product1.jpg in Resources */,
 				8FB0C52F1F7BB4F0004CE121 /* ProductDetails.xib in Resources */,
 				8FB0C5201F7BA8D6004CE121 /* pik1.jpeg in Resources */,
 				8FE11BFC1FAAE2E000A5F7D0 /* kid_1.jpg in Resources */,
@@ -762,6 +815,8 @@
 				8F33F7E71FB046B1002E92F4 /* colorPickerVC.xib in Resources */,
 				8FE11BF41FAAE02600A5F7D0 /* banner_girl1.jpg in Resources */,
 				8FB0C4DD1F7B7B9D004CE121 /* HomeCell.xib in Resources */,
+				8F17F90A1FCBEB3500A976FE /* women_product1.jpg in Resources */,
+				8F17F90B1FCBEB3500A976FE /* womens2.jpg in Resources */,
 				8FF056491F7BDA8900929DA7 /* darkCart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +920,7 @@
 				8F7402851F850BF400CAE9C8 /* UserDetails.swift in Sources */,
 				8FB0C4CB1F7B7204004CE121 /* dataModel.swift in Sources */,
 				8F4F25D61FAD82750053A217 /* SearchVC.swift in Sources */,
+				8F17F90F1FCBF07D00A976FE /* categoryVC.swift in Sources */,
 				8F1489AC1F90B3DA00706529 /* OrderVC.swift in Sources */,
 				8F33F7E61FB046B1002E92F4 /* colorPickerVC.swift in Sources */,
 				8FB0C4C91F7B71F8004CE121 /* Constant.swift in Sources */,

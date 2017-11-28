@@ -57,10 +57,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Watch", "icon":"w4"])
-        arrayMenuOptions.append(["title":"Premium Watches", "icon":"w1"])
-        arrayMenuOptions.append(["title":"new Watches", "icon":"w3"])
-        arrayMenuOptions.append(["title":"maxima watches", "icon":"w5"])
+        arrayMenuOptions.append(["title":"Mens", "icon":"men_1.jpg"])
+        arrayMenuOptions.append(["title":"Women", "icon":"women_1.jpg"])
+        arrayMenuOptions.append(["title":"Kids", "icon":"kid_1.jpg"])
+        arrayMenuOptions.append(["title":"Offers", "icon":"discount_image.jpg"])
 
         tblMenuOptions.reloadData()
     }
